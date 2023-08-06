@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/Jakoo13/grpc-go-example/calculator/proto";
+
+message CalculatorRequest {
+    int64 firstNumber = 1;
+    int64 secondNumber = 2;
+}
+
+message CalculatorResponse {
+  int64 result = 1;
+}
+
+service CalculatorService {
+  rpc AddNumbers(CalculatorRequest) returns (CalculatorResponse);
+}
